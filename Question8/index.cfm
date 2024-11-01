@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
   </head>
-  <body>   
-   <cfset local.obj= createObject("component","dateOperation")>
-   <cfoutput>
-    #local.obj.getTimeinfo()#
-   </cfoutput>
+  <body>
+    
+    
   </body>
 </html>

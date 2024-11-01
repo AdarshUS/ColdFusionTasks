@@ -1,12 +1,12 @@
 <cfcomponent>
-  <cffunction  name="getTimeinfo" returnType="date">   
-    <cfset todayDate= dateFormat(now(),"dd-mm-yyy")>
-    <cfoutput>Today's Date is #todayDate#<br></cfoutput>
+  <cffunction  name="getTimeinfo" returnType="string">   
+    <cfset todayDate= dateFormat(now(),"dd-mm-yyy")>    
     <cfset current_monthNum=dateFormat(now(),"mm")>
     <cfset current_monthWord=dateFormat(now(),"mmmm")>
-    <cfoutput>current month is #current_monthNum#(#current_monthWord#)</cfoutput>
-    <cfset dayofweek=dayOfWeek(now())>
-    <cfset fridayDate=now()-dayofweek>
-    <cfoutput>#fridayDate#</cfoutput>
+    
+    <cfset dayofweek=DayOfWeek(now())>
+    <cfset daysSinceFriday = (#dayofweek# +1) % 7>
+    <cfset lastFridayDate = dateAdd("d", -daysSinceFriday, now())>
+    <cfreturn "Today's Date is #todayDate# <br> current month in numeric:#current_monthNum# <br> current month in word:#current_monthWord# <br> Last friday date:#lastFridayDate#">
   </cffunction>
 </cfcomponent>
