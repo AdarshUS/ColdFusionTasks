@@ -12,11 +12,15 @@
       <input type="text" id="rate" name="rate" class="form-control m-3">
       <input type="submit" class="btn btn-success m-3">
     </form>
-   <cfset local.obj= createObject("component","divisibleBy3")>
-   <cfset ans=local.obj.isDivisibleBy3(form.rate)>
-   <cfoutput>
-    #ans#
-   </cfoutput>
+    <cfif structKeyExists(form,"rate")>
+        <cfset local.obj= createObject("component","divisibleBy3")>
+        <cfset ans=local.obj.isDivisibleBy3(form.rate)>
+        <cfoutput>
+         #ans#
+        </cfoutput>
+    </cfif>
+  
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

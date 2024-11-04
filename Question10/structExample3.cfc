@@ -1,9 +1,17 @@
-<cfcomponent>
-  <cffunction  name="insertIntoStruct" access="public" returnType="string">
-    <cfargument  name="key" type="string">
-    <cfargument  name="value" type="string">
-    <cfset mystruct=structNew("ordered","text","desc",false)>
-    <cfset mystruct[#arguments.key#] = #arguments.value#>
-    <cfdump  var="##">
+<cfcomponent>  
+  <cffunction  name="insertIntoStruct" access="public">
+    <cfargument  name="key">
+    <cfargument  name="value">
+  
+    <cfif NOT structKeyExists(session,"mystruct")>
+      
+      <cfset session.mystruct= structNew()>
+    </cfif>
+    <cfif NOT structKeyExists(session.mystruct,#arguments.key#)>
+      
+      <cfset session.mystruct[#arguments.key#] = #arguments.value#>
+     
+    </cfif>   
+    <cfdump  var="#session.mystruct#">
   </cffunction>
 </cfcomponent>

@@ -1,6 +1,5 @@
 <cfoutput>
 <!DOCTYPE html>
-<cfapplication name="myapp" sessionmanagement="yes">
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,7 +18,9 @@
       <input type="submit">
     </form>
     <cfset obj= createObject("component","structExample3")>
-     #obj.insertIntoStruct()#
+    <cfif structKeyExists(form,"key") AND structKeyExists(form,"val")>
+      #obj.insertIntoStruct(form.key,form.val)#
+    </cfif>    
   </body>
 </html>
 </cfoutput>
