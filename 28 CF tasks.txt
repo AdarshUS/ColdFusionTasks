@@ -80,13 +80,6 @@ In this task, you should show the keys in alphabetical order.
 <cfset res = mulitiply(1,2,3,4)>
 <cfdump var=”#res#”>
 
-
-
-
-
-
-
-
 12. In SQL create a table with firstname & last name columns. insert 10 records into that table. 
 There is no primary key & numberic column in this table. Create a page with text box & submit button.  
 User can enter numeric value less than 10. While click on submit, you should show all data from table 
