@@ -1,7 +1,7 @@
 <cfcomponent>
   <cffunction  name="isOddEven" access="public">
     <cfargument  name="num" type="numeric">
-    <cfset mystruct=structNew()>
+    <cfset mystruct=structNew("ordered")>
      <cfloop index="i" from="1" to="#num#">
       <cfif i %2 eq 0>
         <cfset mystruct[i]="green">
