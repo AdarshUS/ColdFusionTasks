@@ -112,7 +112,7 @@ mulitiply(1,2,3,4)
 While clicking on submit button, page should show up 1 to given input number, odd numbers should be in blue, even numbers should be in green.
 18. Need to create a query data type variable manually with out using cfquery tag. Need to use neccesary query functions.
 Query will have 3 columns
- ID - Number 
+ ID - Number                                                    
  Name - String
  email        - String
 This Query variable should have 3 rows of data.

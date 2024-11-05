@@ -2,7 +2,7 @@
   <cffunction  name="insertIntoStruct" access="public">
     <cfargument  name="key">
     <cfargument  name="value">
-  
+    <cfset session.name = arguments.key>
     <cfif NOT structKeyExists(session,"mystruct")>
       
       <cfset session.mystruct= structNew()>

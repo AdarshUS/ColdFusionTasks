@@ -17,18 +17,20 @@
     <cfset obj=new printColor()>
       <cfif structKeyExists(form,"num")>
         <cfset result=obj.isOddEven(form.num)>       
-      </cfif>
-      <cfloop collection="#result#" item="key">
       
-        <cfset colorStyle = "color:" & result[key] & ";" >
-       
-        <div style="#colorStyle#">
-          <cfoutput>
-            #key#        
-          </cfoutput>
+      <cfloop collection="#result#" item="key">        
+      
+        <cfoutput>
+        <div style="color:#result[key]#;">
+            #key# 
+        </div>
+                                         
+        </cfoutput> 
+     
+                  
          
-        </div>       
       </cfloop>
+      </cfif>
     <script src="script.js"></script>
   </body>
 </html>
