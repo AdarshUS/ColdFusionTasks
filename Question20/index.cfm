@@ -6,31 +6,39 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="">
   </head>
   <body>
-    <form method="POST">
-      <cfset randomtext=new validate().randomtext()>
-     
-      <cfimage action="captcha" text="#randomtext#" difficulty="low" fontsize="18">
-      <label for="cap">Enter the captcha:</label>
-      <input type="text" id="cap" name="cap"><br>
-      <label for="mail">Enter the Email:</label>
-      <input type="text" id="mail" name="mail">
-      <input type="submit">
-    </form>
-    <cfset local.obj= new validate()>
     <cfoutput>
-      <cfif local.obj.validatecaptcha(form.cap,randomtext)>
-        <cfoutput>
-          Success
-        </cfoutput>
-      <cfelse>
-        <cfoutput>
-          Invalid Captcha
-        </cfoutput>
-      </cfif>
+    <div class="d-flex justify-content-center align-items-center">
+      <div>
+        <form method="POST">
+          <cfset local.objValidate = new validate()>
+<!---           <cfset randomtext=new validate().randomtext()> --->
+          <cfset local.randomtext = local.objValidate.randomtext()>
+          <cfimage action="captcha" text="#local.randomtext#" difficulty="low" fontsize="18"><br>
+          <label for="captchaText">Enter the captcha:</label>
+          <input type="text" id="captchaText" name="captchaText"><br>
+          <label for="mail">Enter the Email:</label>
+          <input type="text" id="mail" name="mail"><br>
+          <input type="submit" class="btn btn-success m-3">
+        </form>
+        <cfif structKeyExists(form,"captchaText")>
+          <cfset local.objValidate= new validate()>
+          <cfset result=local.objValidate.validatecaptcha(form.captchaText,local.randomtext)>          
+          <cfif result>       
+            Success        
+          <cfelse>        
+            Invalid Captcha       
+          </cfif>
+          <cfif NOT local.objValidate.validateEmail(form.mail)>
+            Invalid Mail
+          </cfif>
+        </cfif>
+      </div>      
+    </div>   
     </cfoutput>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

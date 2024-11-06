@@ -1,6 +1,6 @@
 <cfcomponent>
-  <cffunction  name="getRate" returnType="any">
-  <cfargument  name="rateValue" type="Numeric">
+  <cffunction  name="getRate" returnType="string">
+  <cfargument  name="rateValue" type="Numeric" required="true">
    <cfset rate = arguments.rateValue>
    <cfswitch expression=#rate#>
       <cfcase value="5">Very Good</cfcase>

@@ -1,6 +1,6 @@
 <cfcomponent>
-  <cffunction  name="isDivisibleBy3" returnType="any">
-  <cfargument  name="items" type="any">
+  <cffunction  name="checkDivisibility" returnType="string">
+  <cfargument  name="items" type="string" required="true">
     <cfset items=#arguments.items#>
     <cfset result="">
     <cfloop list="#items#" item="num">
