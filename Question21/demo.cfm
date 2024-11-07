@@ -7,10 +7,10 @@
 from="adarshus1999@gmail.com"
 to="abhijithff59@gmail.com"
 subject="Sample e-mail from ColdFusion"
-server="smtp.gmail.com"
+ type="text"
 >
 
-This is a sample e-mail message to show basic e-mail capability.
+This is a sample mail
 
 </cfmail>
 The e-mail was sent.

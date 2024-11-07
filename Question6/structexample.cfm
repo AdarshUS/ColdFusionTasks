@@ -14,15 +14,14 @@
       <input type="text" id="key" name="key">
       <label for="val">Enter the Value</label>
       <input type="text" id="val" name="val">
-      <input type="submit">
+      <input type="submit" id="submitbtn" name="submitbtn">
     </form>    
-    <cfif structKeyExists(form,"key") AND structKeyExists(form,"val")>      
-        <cfset mystruct=StructNew("Ordered")>
-        <cfset mystruct[form.key] = form.val>
-        <cfoutput>
+    <cfif structKeyExists(form,"submitbtn")>      
+      <cfset mystruct=StructNew("Ordered")>
+      <cfset mystruct[form.key] = form.val>
+      <cfoutput>
            Key is #form.key# and value is #mystruct[form.key]#
-        </cfoutput>
-    </cfif>
-    
+      </cfoutput>
+    </cfif>    
   </body>
 </html>

@@ -8,11 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
   </head>
-  <body>   
-   <cfset local.obj= createObject("component","dateOperation")>
+  <body>  
    <cfoutput>
+    <cfset local.obj= createObject("component","dateOperation")>
     #local.obj.getTimeinfo()#
-    #local.obj.DisplayLastFiveDates()#
+    <cfset result = local.obj.DisplayLastFiveDates()>
+    <cfdump var="#result#">
+    <cfloop collection="#result#" item="key">
+      <div style="color:#result[key]#">#key#</div>
+    </cfloop>
    </cfoutput>
   </body>
 </html>

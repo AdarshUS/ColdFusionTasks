@@ -2,7 +2,7 @@
   <cffunction  name="calculateAge" access="public" returnType="string">
    <cfargument  name="dobuser" type="any">
    <cfargument  name="dobmom" type="any">
-   <cfset dateobjuser=parseDateTime(#arguments.dobuser#,"dd-mm-yyyy")>
+   <cfset dateobjuser = parseDateTime(#arguments.dobuser#,"dd-mm-yyyy")>
    <cfset dateobjmom=parseDateTime(#arguments.dobmom#,"dd-mm-yyyy")>
    <cfset year1=year(arguments.dobuser)>
    <cfset year2=year(arguments.dobmom)>

@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
-          
+    <cfoutput >
+      <cfset local.obj = new QueryData()>
+      <cfset local.result = local.obj.createQuery()>
+      <cfdump var="#local.result#">
+    </cfoutput>    
   </body>
 </html>
