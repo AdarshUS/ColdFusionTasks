@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #669900;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer{
+  background-color: #fff;
+  width: 45%;
+}
+
+.formContainerHeader{
+  background-color: #98cb00;
+}
+
+.imagecntr{
+  width: fit-content;
+  padding: 10px;
+}
+
+.empApp{
+  border-bottom: 0.3px dotted black;
+}
+
+form ul li{
+  /* height: 73px; */
+  list-style-type: none;
+  padding: 20px;
+}
+
+form input,.selectBox{
+  height: 27px;
+}
+
+.startdateItem1,.startdateItem2{
+  width: 17px;
+  height: 28px;
+}
+
+.startdateItem3{
+  width: 30px;
+  height: 28px;
+}
+
+.startTime{
+  display: flex;
+  align-items: center;
+}
+
+.slash{
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+.portfolio{
+  width: 295px;
+}
+
+.salaryBox1{
+  width: 60px;
+}
+
+.salaryBox2{
+  width: 30px;
+}
+
+.relocateBox{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phoneBox{
+  width: 40px;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+
+  .error{
+    color: red;
+  }

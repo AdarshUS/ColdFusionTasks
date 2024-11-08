@@ -35,10 +35,10 @@
           </div>        
         </form>
         <cfif structKeyExists(form, "submitbtn")>
-          <cffile action="upload"  destination="C:\Users\adars\Downloads\Documents" filefield="bdayImage" nameconflict="makeUnique" result="newPath">      
+          <cffile action="upload"  destination="C:\Users\Adarsh\Documents\backup" filefield="bdayImage" nameconflict="makeUnique" result="newPath">      
           <cfset local.sendEmailObj = new sendEmail()>
           <cfdump var="#newPath.ServerFile#">
-          #local.sendEmailObj.sendMail(form.babeName, form.mail, form.textBox, "C:\Users\adars\Downloads\Documents\"&newPath.ServerFile)#
+          #local.sendEmailObj.sendMail(form.babeName, form.mail, form.textBox, "C:\Users\Adarsh\Documents\backup\"&newPath.ServerFile)#
         </cfif>
       </div>      
     </cfoutput>
