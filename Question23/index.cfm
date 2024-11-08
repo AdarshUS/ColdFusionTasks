@@ -18,7 +18,7 @@
       <h2>Employement Application</h2>
       <div>Infinity Box Inc</div>
     </div>
-    <form action="actionPage.cfm" onsubmit="return validate();" method="POST">
+    <form  onsubmit="return validate();" method="POST">
       <ul>
         <li>
           <label for="position" class="required">which position are you applying for?</label><br>
@@ -35,11 +35,11 @@
           <div class="required">Are you willing to relocate</div>
           <div class="relocateBox">
             <label for="relocate1">Yes</label>
-            <input type="radio" name="relocate" id="relocate1" class="relocate"><br>           
+            <input type="radio" name="relocate" id="relocate1" class="relocate" value="Yes"><br>           
           </div>
           <div class="relocateBox">
             <label for="relocate2">No</label>
-            <input type="radio" name="relocate" id="relocate2" class="relocate">
+            <input type="radio" name="relocate" id="relocate2" class="relocate" value="No">
           </div>
            <div id="relocateError" class="error"></div>         
         </li>
@@ -63,7 +63,7 @@
           <div class="salryrequirement">Salary Requirements</div>
           <input type="text" name="dollar" id="dollar" class="salaryBox1">
           <span></span>
-          <input type="text" name="cents" id="cents" class="salaryBox2">
+          <input type="text" name="cent" id="cent" class="salaryBox2">
         </li>
         <li>
           <div class="cntinfo">Your Contact Information</div>
@@ -88,8 +88,15 @@
       <input type="submit" id="submitbtn" name="submitbtn" onclick="validate()">
     </form>    
   </div>
-  <cfset local.obj = createObject("component","components.DatabaseOperation")>
-  #local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph)#
+  <cfif structKeyExists(form,"submitbtn")>
+      <cfset local.obj = createObject("component","components.DatabaseOperation")>
+      <cfdump var="#form.relocate#" >
+      #local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph)#
+      
+  </cfif>
+  
+  
+  
   <script src="./script/script.js"></script>
   </cfoutput> 
 </body>
