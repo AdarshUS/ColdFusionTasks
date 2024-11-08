@@ -12,7 +12,8 @@
   <body>
     <cfoutput>
     <div class="d-flex justify-content-center align-items-center">
-      <div>
+      
+    <div>
         <form method="POST">
           <cfset local.objValidate = new validate()>
 <!---           <cfset randomtext=new validate().randomtext()> --->

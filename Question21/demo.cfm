@@ -4,7 +4,7 @@
 <body>
 <h1>Sample e-mail</h1>
 <cfmail
-from="adarshus1999@gmail.com"
+from="adarshtech1999@gmail.com"
 to="abhijithff59@gmail.com"
 subject="Sample e-mail from ColdFusion"
  type="text"
@@ -17,3 +17,4 @@ The e-mail was sent.
 
 </body>
 </html>
+
