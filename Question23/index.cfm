@@ -91,12 +91,8 @@
   <cfif structKeyExists(form,"submitbtn")>
       <cfset local.obj = createObject("component","components.DatabaseOperation")>
       <cfdump var="#form.relocate#" >
-      #local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph)#
-      
-  </cfif>
-  
-  
-  
+      #local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph)#      
+  </cfif>  
   <script src="./script/script.js"></script>
   </cfoutput> 
 </body>

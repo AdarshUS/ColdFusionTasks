@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
-    <form method="POST">
-      <label for="firstName" class="form-label">Enter your First Name</label>
-      <input type="text" id="firstName" name="firstName" class="form-control">
-      <label class="form-label mailLabel">Enter your mail</label>
-      <input type="email" id="mail" name="mail" class="form-control emailBox"><button class="checkBtn">Check</button>
-      <input type="submit" disabled class="btn btn-success submitBtn">
-    </form>
+    <cfoutput >
+       <form method="POST">
+        <label for="firstName" class="form-label">Enter your First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control">
+        <label class="form-label mailLabel">Enter your mail</label>
+        <input type="email" id="mail" name="mail" class="form-control emailBox"><button type="button" class="checkBtn" onclick="checkEmail()">Check</button><span id="existError" ></span>
+        <input type="submit"  class="btn btn-success submitBtn" id="submitBtn" name="submitBtn" value="submit" disabled>
+      </form>
+      <cfif structKeyExists(form,"submitBtn")>
+      <cfdump var="#form.firstName#" >
+        <cfset local.obj = new components.checkData()>
+        #local.obj.insertData(form.firstName,form.mail)#    
+      </cfif>                   
+    </cfoutput>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script/script.js"></script>
   </body>
 </html>

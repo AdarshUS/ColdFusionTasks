@@ -19,3 +19,7 @@
 .mailLabel{
   display: block;
 }
+
+#existError{
+  color: red;
+}
