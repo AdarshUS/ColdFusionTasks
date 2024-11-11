@@ -15,7 +15,7 @@
       
     <div>
         <form method="POST">
-          <cfset local.objValidate = new validate()>
+          <cfset local.objValidate = new components.validate()>
 <!---           <cfset randomtext=new validate().randomtext()> --->
           <cfset local.randomtext = local.objValidate.randomtext()>
           <cfimage action="captcha" text="#local.randomtext#" difficulty="low" fontsize="18"><br>

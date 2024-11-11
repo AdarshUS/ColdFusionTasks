@@ -36,7 +36,7 @@
         </form>
         <cfif structKeyExists(form, "submitbtn")>
           <cffile action="upload"  destination="C:\Users\Adarsh\Documents\backup" filefield="bdayImage" nameconflict="makeUnique" result="newPath">      
-          <cfset local.sendEmailObj = new sendEmail()>
+          <cfset local.sendEmailObj = new components.sendEmail()>
           <cfdump var="#newPath.ServerFile#">
           #local.sendEmailObj.sendMail(form.babeName, form.mail, form.textBox, "C:\Users\Adarsh\Documents\backup\"&newPath.ServerFile)#
         </cfif>

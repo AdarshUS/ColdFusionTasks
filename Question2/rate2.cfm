@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rating</title>
+		<link rel="stylesheet" href="./style/bootstrap.css">
 	</head>
 	<body>
 		<cfoutput>
@@ -14,7 +15,7 @@
 			</form>
 			<cfif structKeyExists(form,"rate")>
 				<cfif isNumeric(form.rate) AND form.rate GTE 1 AND form.rate LTE 5>
-					<cfset local.obj= createObject("Component","rate2")>
+					<cfset local.obj= createObject("Component","components.rate2")>
 					<cfset local.result = local.obj.getRate(form.rate)>
 				<cfelse>
 						Invalid Number

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<cfapplication name="myapp" sessionmanagement="yes">
 <html>
   <head>
     <meta charset="utf-8">
@@ -15,20 +14,17 @@
       <input type="text" id="key" name="key">
       <label for="val">Enter the Value</label>
       <input type="text" id="val" name="val">
-      <input type="submit">
+      <input type="submit" id="submit" name="submit">
     </form>    
-    <cfif structKeyExists(form,"key") && structKeyExists(form,"val")>
-        <cfoutput>
+    <cfif structKeyExists(form,"submit")>
+      <cfoutput>
         Inside
-        </cfoutput>
-        <cfset mystruct=StructNew("Ordered")>
-        <cfset session.mystruct[form.key] = form.val>
-        <cfdump  var="#session.mystruct#">
-    </cfif>
-    
+      </cfoutput>
+      <cfset session.mystruct=StructNew("Ordered")>
+      <cfset session.mystruct[form.key] = form.val>
+      <cfdump  var="#session.mystruct#">
+    </cfif>    
   </body>
 </html>
     
-    </form>
-  </body>
-</html>
+   

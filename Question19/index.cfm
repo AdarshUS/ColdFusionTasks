@@ -12,13 +12,11 @@
     <form method="post">      
       <input type="submit" id="test" name="test">
     </form>
-    <cfif structKeyExists(form,"test")>
-     
-      <cfset obj=new counter()>
+    <cfif structKeyExists(form,"test")>     
+      <cfset obj=new components.counter()>
       <cfoutput>
         #obj.increaseCount()#
       </cfoutput>
-    </cfif>
-   
+    </cfif>   
   </body>
 </html>

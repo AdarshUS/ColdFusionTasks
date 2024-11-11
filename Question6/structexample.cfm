@@ -20,7 +20,7 @@
       <cfset mystruct=StructNew("Ordered")>
       <cfset mystruct[form.key] = form.val>
       <cfoutput>
-           Key is #form.key# and value is #mystruct[form.key]#
+         Key is #form.key# and value is #mystruct[form.key]#
       </cfoutput>
     </cfif>    
   </body>

@@ -1,0 +1,21 @@
+.form-control{
+  width: 25%;
+}
+
+.emailBox{
+  display: inline-block;
+}
+
+.checkBtn{
+  display: inline-block;
+  margin: 0 13px;
+}
+
+.submitBtn{
+  display: block;
+    margin: 20px;
+}
+
+.mailLabel{
+  display: block;
+}
