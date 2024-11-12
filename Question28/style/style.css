@@ -1,0 +1,18 @@
+ .form_container{
+    width: 28%;
+    height: 236px;
+ } 
+ .display_none
+{
+	display:none;
+}
+.active
+{
+	display:unset;
+}
+
+.icon{
+   color: blue;
+}
+
+    
