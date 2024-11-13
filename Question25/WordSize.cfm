@@ -16,9 +16,17 @@
                 </form>
                 <cfif structKeyExists(form,"submitButton")>
                     <cfset local.obj  =  new Components.tagCloud()>
-                    <cfset local.result  =  local.obj.wordCount(form.text)>
+                    <cfset local.result  =  local.obj.changeFont(form.text)>
                     <div class = "w-25 mx-auto mt-5 rounded-pill p-4">
-                        <div class = "text-center"><cfdump var="#local.result#"></div>
+                        <div class = "text-center">
+                            <cfset fontSize = 12>
+                            <cfloop collection="#local.result#" item="item">
+                                <div class="d-flex justify-content-between">
+                                    <span style="font-size:#fontSize + (5 * local.result[item])#px;">#item#</span>
+                                    <span>#local.result[item]#</span>
+                                </div>
+                            </cfloop>
+                        </div>
                     </div> 
                 </cfif>
             </cfoutput>
