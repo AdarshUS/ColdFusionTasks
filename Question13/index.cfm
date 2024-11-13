@@ -14,7 +14,7 @@
       <input type="text" id="inputText" name="inputText">
       <input type="submit">
     </form>
-    <cfset obj=createObject("component","searchword")>
+    <cfset obj=createObject("component","components.searchword")>
     <cfoutput>
       <cfif structKeyExists(form,"inputText")>
        Found the key word in #obj.searchWord(form.inputText)# times

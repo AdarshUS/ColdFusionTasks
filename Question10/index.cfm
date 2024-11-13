@@ -17,7 +17,7 @@
       <input type="text" id="val" name="val">
       <input type="submit">
     </form>
-    <cfset obj= createObject("component","structExample3")>
+    <cfset obj= createObject("components/component","structExample3")>
     <cfif structKeyExists(form,"key") AND structKeyExists(form,"val")>
       #obj.insertIntoStruct(form.key,form.val)#
     </cfif>    

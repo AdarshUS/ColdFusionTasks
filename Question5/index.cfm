@@ -19,7 +19,7 @@
        <input type="submit" class="btn btn-success"> 
       </form>
       <cfif structKeyExists(form,"dob")>
-        <cfset local.obj=createObject("component","calculateAge")>
+        <cfset local.obj=createObject("component","components.calculateAge")>
         <cfoutput>
         #local.obj.calculateAge(form.dob,form.dobm)#
         </cfoutput>

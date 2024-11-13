@@ -15,7 +15,7 @@
         <input type="submit">
       </form>
       <cfif structKeyExists(form,"test")>
-        <cfset local.obj= new databaseOperation()>
+        <cfset local.obj= new components.databaseOperation()>
         <cfset local.result = local.obj.fetchData()>
         <cfdump var="#local.result#" >
         <cfoutput query=local.result>

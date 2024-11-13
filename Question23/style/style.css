@@ -32,6 +32,8 @@ form ul li{
   /* height: 73px; */
   list-style-type: none;
   padding: 20px;
+  margin: 20px;
+  width: 65%;
 }
 
 form input,.selectBox{
@@ -80,6 +82,10 @@ form input,.selectBox{
   width: 40px;
 }
 
+.phoneBoxLarge{
+  width: 60px;
+}
+
 .required:after {
     content:" *";
     color: red;
@@ -87,4 +93,13 @@ form input,.selectBox{
 
   .error{
     color: red;
+  }
+
+  .heading{
+    font-weight: bold;
+  }
+
+  .nameLabel{
+    display: flex;
+    gap: 153px;
   }

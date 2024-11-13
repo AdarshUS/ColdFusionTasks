@@ -29,7 +29,7 @@
       </div>
     </form>
     <cfif structKeyExists(form,"submitbtn")>
-      <cfset local.obj= new UploadImage()>
+      <cfset local.obj= new components.UploadImage()>
       <cfimage  action="writeToBrowser"  source="#form.imageFile#" width="50" height="50">      
     </cfif>   
     </cfoutput>

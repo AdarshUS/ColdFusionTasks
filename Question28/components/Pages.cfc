@@ -17,9 +17,15 @@
   <cffunction name="insertPage"  access="public" returntype="void">
     <cfargument name="pageName" type="string" required="true" >
     <cfargument name="pageDesc"  type="string" required="true">
-    <cfquery  name="insertpages" datasource="cf_tutorial">      
-      INSERT INTO PageTable(pageName,pageDescription)  values('#arguments.pageName#','#arguments.pageDesc#')      
-    </cfquery> 
+    <cftry>
+      <cfquery  name="insertpages" datasource="cf_tutorial">      
+        INSERT INTO PageTable(pageName,pageDescription)  values('#arguments.pageName#','#arguments.pageDesc#')      
+      </cfquery>
+      <cfcatch type="any">
+              
+      </cfcatch>  
+    </cftry>
+    
     <cflocation url="./adminPage.cfm" >
   </cffunction>
 

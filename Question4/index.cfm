@@ -10,7 +10,7 @@
   </head>
   <body>  
    <cfoutput>
-    <cfset local.obj= createObject("component","dateOperation")>
+    <cfset local.obj= createObject("component","components.dateOperation")>
     #local.obj.getTimeinfo()#
     <cfset result = local.obj.DisplayLastFiveDates()>
     <cfdump var="#result#">

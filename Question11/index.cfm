@@ -1,4 +1,4 @@
-<cfset local.obj=createObject("component","multiply")>
+<cfset local.obj=createObject("component","components.multiply")>
 <cfset result=local.obj.multiply(1,2)>
 <cfdump var="#result#">
 <cfset result=local.obj.multiply(1,2,3)>

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
-    <form method="post">      
-      <input type="submit" id="test" name="test">
-    </form>
-    <cfif structKeyExists(form,"test")>     
-      <cfset obj=new components.counter()>
-      <cfoutput>
-        #obj.increaseCount()#
-      </cfoutput>
-    </cfif>   
+    <cfoutput>
+      <form method="post">      
+        <input type="submit" id="test" name="test">
+      </form>
+      <cfif structKeyExists(form,"test")>     
+        <cfset local.obj=new components.counter()>      
+          #local.obj.increaseCount()#     
+      </cfif>
+    </cfoutput>
   </body>
 </html>
