@@ -1,5 +1,5 @@
 <cfcomponent >
-  <cffunction name="insertData"  access="public" >
+  <cffunction name="insertData"  access="public" returntype="boolean">
     <cfargument name="position" type="string" required="true" >
     <cfargument name="canRelocate" type="string" required="true">
     <cfargument name="startDate" type="string" required="true">
@@ -16,9 +16,25 @@
 
     <cfset local.salary = arguments.dollar & "."&arguments.cent>
     <cfset local.phone = arguments.ph1 & arguments.ph2 & arguments.ph3>
-
-    <cfquery name="AddApplication" datasource="cf_tutorial">
-      INSERT INTO applications VALUES('#arguments.firstName#','#arguments.lastName#','#arguments.email#','#local.phone#','#arguments.position#','#arguments.canRelocate#','#arguments.startDate#','#arguments.website#','#arguments.resume#','#local.salary#')     
-    </cfquery>
+    <cftry>
+      <cfquery name="AddApplication" datasource="#application.datasource#">
+        INSERT INTO applications VALUES(
+          <cfqueryparam value="#arguments.firstName#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.lastName#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.email#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#local.phone#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.position#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.canRelocate#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.startDate#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.website#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.resume#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#local.salary#" cfsqltype="cf_sql_varchar">
+          )     
+      </cfquery>
+    <cfcatch  type="any">
+      <cfreturn false>
+    </cfcatch>  
+    </cftry> 
+    <cfreturn true> 
   </cffunction>
 </cfcomponent>

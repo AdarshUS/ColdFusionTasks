@@ -10,8 +10,8 @@
             <cfoutput>
                 <form action = "" method = "POST">
                     <div class = "text-center mt-3 w-100">
-                        <textarea name = "text" placeholder = "Enter the string" class = "w-25 mx-auto  mx-auto form-control border border-success"></textarea>
-                        <input type = "submit" value = "Submit" name="submitButton" class = "btn btn-primary my-auto mt-3 w-25">
+                        <textarea name = "text" placeholder = "Enter the string" class = "w-55 mx-auto  mx-auto form-control border border-primary"></textarea>
+                        <input type = "submit" value = "Submit" name="submitButton" class = "btn btn-primary my-auto mt-3 w-55">
                     </div>
                 </form>
                 <cfif structKeyExists(form,"submitButton")>

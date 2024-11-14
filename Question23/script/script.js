@@ -2,14 +2,16 @@ function validate()
   {    
     let position =  document.getElementById("position").value;
     let relocateChecked = document.querySelector('input[name = "relocate"]:checked');
-    let dateString =  document.getElementById("date").value;
-    // let dateobj = date.parse(dateString);
+    let dateString =  document.getElementById("date").value;    
     let firstname = document.getElementById("first").value;
     let lastname = document.getElementById("last").value;
-    let mail = document.getElementById("mail").value;
-    var pattern = "/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/";
-    let phone = document.getElementById("ph1").value;
-     alert(position)
+    let mail = document.getElementById("mail").value;   
+    const phone1 = document.getElementById("ph1").value;
+    const phone2 = document.getElementById("ph2").value;
+    const phone3 = document.getElementById("ph3").value;
+    
+    
+
     let relocateError = document.getElementById("relocateError");
     let positionError = document.getElementById("positionError");
     let timeError = document.getElementById("timeError");
@@ -52,12 +54,17 @@ function validate()
         validInput = false;
         document.getElementById("contactContainer").style.backgroundColor = "#ffdfe0";
       }
-    if(mail.trim() === "" ||  !(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)))
+    if(mail.trim() === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail))
       {
         emailError.textContent = "Enter valid mail";
         validInput = false;
         document.getElementById("emailContainer").style.backgroundColor = "#ffdfe0";
       }
+    if (!/^\d{3}$/.test(phone1) || !/^\d{3}$/.test(phone2) || !/^\d{4}$/.test(phone3)) {
+      phoneError.textContent = "Enter a valid phone number";
+      validInput = false;
+      document.getElementById("phoneContainer").style.backgroundColor = "#ffdfe0";
+    }
     // if(!/[0-9]/.test(phone) || !(phone.length==10))
     //   {
     //     phoneError.textContent = "Enter valid phone Number";

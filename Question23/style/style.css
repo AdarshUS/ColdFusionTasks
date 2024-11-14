@@ -28,8 +28,7 @@ body{
   border-bottom: 0.3px dotted black;
 }
 
-form ul li{
-  /* height: 73px; */
+form ul li{ 
   list-style-type: none;
   padding: 20px;
   margin: 20px;
