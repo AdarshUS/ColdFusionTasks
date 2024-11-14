@@ -92,7 +92,7 @@
       </div>
       <cfif structKeyExists(form,"submitbtn")>
         <cfset local.obj = createObject("component","components.DatabaseOperation")>      
-        <cfset local.inserted = local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph1,form.ph2,form.ph3)>
+        <cfset local.inserted = local.obj.insertData(form.position,form.relocate,form.date,form.portfolio,form.resume,form.dollar,form.cent,form.first,form.last,form.mail,form.ph1,form.ph2,form.ph3)>        
         <cfif local.inserted>
           <p>Submitted Successfully</p>
         <cfelse>

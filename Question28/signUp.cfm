@@ -42,7 +42,7 @@
             <cfset local.obj = new components.insertData()>
             <cfset local.result = local.obj.insertRecord(form.username,form.Password,form.role)>
             <cfif local.result>
-              <p>SignUp Successfull</p>  
+              <p>SignUp Successful</p>  
             <cfelse>
               <p>Sign Up Failed</p>           
             </cfif>        

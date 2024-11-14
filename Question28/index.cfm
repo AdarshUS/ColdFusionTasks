@@ -29,17 +29,17 @@
           </form>
           <cfif structKeyExists(form,"submit")>
             <cfset local.objVerification = new components.Verification()>
-            <cfset local.result = local.objVerification.verifyData(form.username,form.Password)>
+            <cfset local.password = hash("#form.Password#" , "SHA-256" , "UTF-8")>            
+            <cfset local.result = local.objVerification.verifyData(form.username,local.password)>
             <cfif local.result.RecordCount GT 0>
               <cfif local.result.role EQ "Admin">
-                <cfset session.adminLogged = true>
+                <cfset session.Logged = true>
                 <cflocation url="./adminPage.cfm" >
               <cfelse>
-                <cfset session.adminLogged = true>
+                <cfset session.Logged = true>
                 <cflocation url="./userPage.cfm" >
               </cfif>
-              <cfset local.role = local.result.role>
-              <!--- <cfdump var="#local.role#" > --->
+              <cfset local.role = local.result.role>             
             <cfelse>
               <p class="text-danger">Incorrect UserName or Password</p>
             </cfif>                                    

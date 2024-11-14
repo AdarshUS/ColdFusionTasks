@@ -25,8 +25,10 @@
       </form>
       <cfif structKeyExists(form,"submit")>
         <cfset local.objPage = new components.Pages()>
-        <cfdump  var="#local.objPage#">
-        #local.objPage.insertPage(form.page_name,form.page_desc)#   
+        <cfset local.result = local.objPage.insertPage(form.page_name,form.page_desc)>
+        <cfif NOT local.result>
+          <p>Page Already Exist</p>         
+        </cfif>   
       </cfif>       
     </cfoutput>    
   </body>

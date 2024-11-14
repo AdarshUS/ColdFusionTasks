@@ -65,26 +65,18 @@ function validate()
       validInput = false;
       document.getElementById("phoneContainer").style.backgroundColor = "#ffdfe0";
     }
-    // if(!/[0-9]/.test(phone) || !(phone.length==10))
-    //   {
-    //     phoneError.textContent = "Enter valid phone Number";
-    //     validInput = false;
-    //     document.getElementById("phoneContainer").style.backgroundColor = "#ffdfe0";
-    //   }
-    
-      alert(validInput)
-
+     
       return validInput;
   }
 
-  function validatePhone(input){
-        
-    if(input.value.length >=3)
-      {        
-        $(input).next().focus();    
-      }
-    if(input.value.length<=0)
+  function validatePhone(input)
+    {
+    if (input.value.length >= 3) 
       {
-        $(input).prev().focus();
-      }
-  }
+      let nextInput = input.nextElementSibling.nextElementSibling;
+      if (nextInput && nextInput.tagName === "INPUT")
+         {
+          nextInput.focus();
+         }
+      }   
+    }

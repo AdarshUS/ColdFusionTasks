@@ -25,7 +25,7 @@
           <cfqueryparam value="#local.phone#" cfsqltype="cf_sql_varchar">,
           <cfqueryparam value="#arguments.position#" cfsqltype="cf_sql_varchar">,
           <cfqueryparam value="#arguments.canRelocate#" cfsqltype="cf_sql_varchar">,
-          <cfqueryparam value="#arguments.startDate#" cfsqltype="cf_sql_varchar">,
+          <cfqueryparam value="#arguments.startDate#" cfsqltype="cf_sql_date">,
           <cfqueryparam value="#arguments.website#" cfsqltype="cf_sql_varchar">,
           <cfqueryparam value="#arguments.resume#" cfsqltype="cf_sql_varchar">,
           <cfqueryparam value="#local.salary#" cfsqltype="cf_sql_varchar">
@@ -34,7 +34,7 @@
     <cfcatch  type="any">
       <cfreturn false>
     </cfcatch>  
-    </cftry> 
+    </cftry>
     <cfreturn true> 
   </cffunction>
 </cfcomponent>
